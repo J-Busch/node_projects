@@ -13,7 +13,9 @@ const names = require("./names")
 const sayHi = require("./utils")
 const data = require("./names_alt")
 
-console.log(data)
+require("./invoke_on_import")
+
+//console.log(data)
 sayHi("Joel")
 sayHi(names.john)
 sayHi(names.peter)
