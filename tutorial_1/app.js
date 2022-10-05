@@ -1,23 +1,10 @@
-const http = require('http')
+// package.json - manifest file (stores important info about project/package)
+// manual approach (create package.json in the root, create properties, etc)
+// npm init (step by step, press enter to skip)
+// npm init -y (everything default)
 
-const PORT = 5000
+const _ = require('lodash')
 
-const server = http.createServer((req,res)=>{
-    if(req.url === '/') {
-        res.end('Welcome to our home page')
-    }
-    else if(req.url === '/about') {
-        res.end('Here is our about page')
-    }
-    else {
-        res.end(`
-        <h1>There was a problem</h1>
-        <p>We can't find the page you are looking for</p>
-        <a href="/">Back home</a>
-        `)
-    }
-})
-
-server.listen(PORT, () => {
-    console.log(`Server is listening on port: ${PORT}`)
-})
+const items = [1,[2,[3, [4]]]]
+const newItems = _.flattenDeep(items)
+console.log(newItems)
